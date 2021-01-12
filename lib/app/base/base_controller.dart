@@ -19,8 +19,8 @@ abstract class _BaseControllerBase with Store {
   @observable
   Widget screen = HomePage();
 
-  @computed
-  Widget get currentScreen => screen;
+  @observable
+  String screenName = 'Home';
 
   @action
   void setScreen(int page) {
@@ -28,15 +28,19 @@ abstract class _BaseControllerBase with Store {
     switch (page) {
       case 0:
         screen = HomePage();
+        screenName = 'Home';
         break;
       case 1:
         screen = AcademyPage();
+        screenName = 'Ensino';
         break;
       case 2:
         screen = InterpreterPage();
+        screenName = 'Interpreter';
         break;
       case 3:
         screen = ProfilePage();
+        screenName = 'Perfil';
         break;
       default:
     }

@@ -15,15 +15,8 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-        onWillPop: () async => false,
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text(widget.title),
-          ),
-          body: Column(
-            children: <Widget>[],
-          ),
-        ));
+    return Column(
+      children: <Widget>[],
+    );
   }
 }

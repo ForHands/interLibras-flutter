@@ -19,14 +19,6 @@ final $BaseController = BindInject(
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$BaseController on _BaseControllerBase, Store {
-  Computed<Widget> _$currentScreenComputed;
-
-  @override
-  Widget get currentScreen =>
-      (_$currentScreenComputed ??= Computed<Widget>(() => super.currentScreen,
-              name: '_BaseControllerBase.currentScreen'))
-          .value;
-
   final _$currentPageAtom = Atom(name: '_BaseControllerBase.currentPage');
 
   @override
@@ -57,6 +49,21 @@ mixin _$BaseController on _BaseControllerBase, Store {
     });
   }
 
+  final _$screenNameAtom = Atom(name: '_BaseControllerBase.screenName');
+
+  @override
+  String get screenName {
+    _$screenNameAtom.reportRead();
+    return super.screenName;
+  }
+
+  @override
+  set screenName(String value) {
+    _$screenNameAtom.reportWrite(value, super.screenName, () {
+      super.screenName = value;
+    });
+  }
+
   final _$_BaseControllerBaseActionController =
       ActionController(name: '_BaseControllerBase');
 
@@ -76,7 +83,7 @@ mixin _$BaseController on _BaseControllerBase, Store {
     return '''
 currentPage: ${currentPage},
 screen: ${screen},
-currentScreen: ${currentScreen}
+screenName: ${screenName}
     ''';
   }
 }

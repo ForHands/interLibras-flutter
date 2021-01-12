@@ -71,6 +71,7 @@ flutter:
     - assets/images/cubo4.svg
     - assets/images/cubo5.svg
     - assets/images/cubo6.svg
+    - assets/images/linguagem.png
   #  - assets/model_3d
     - assets/icons/school.svg
     - assets/icons/interpreter.svg

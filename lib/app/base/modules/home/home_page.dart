@@ -24,29 +24,22 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return WillPopScope(
-        onWillPop: () async => false,
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text(widget.title),
-          ),
-          body: GridView.builder(
-              shrinkWrap: true,
-              itemCount: controller.cards.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, childAspectRatio: 1),
-              padding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
-              itemBuilder: (BuildContext ctxt, int index) {
-                return new Padding(
-                  padding: EdgeInsets.all(3),
-                  child: HomeCardWidget(
-                    name: controller.cards[index].name,
-                    assetName: controller.cards[index].assetName,
-                    action: controller.cards[index].action,
-                    iconPressed: controller.cards[index].iconPressed,
-                  ),
-                );
-              }),
-        ));
+    return GridView.builder(
+        shrinkWrap: true,
+        itemCount: controller.cards.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, childAspectRatio: 1),
+        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+        itemBuilder: (BuildContext ctxt, int index) {
+          return new Padding(
+            padding: EdgeInsets.all(3),
+            child: HomeCardWidget(
+              name: controller.cards[index].name,
+              assetName: controller.cards[index].assetName,
+              action: controller.cards[index].action,
+              iconPressed: controller.cards[index].iconPressed,
+            ),
+          );
+        });
   }
 }
