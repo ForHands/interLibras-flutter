@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:interLibras/app/shared/widgets/bottom_bar_widget.dart';
 import 'profile_controller.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -19,7 +18,6 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
     return WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
-          bottomNavigationBar: BottomBarWidget(),
           appBar: AppBar(
             title: Text(widget.title),
           ),

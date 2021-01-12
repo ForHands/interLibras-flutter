@@ -13,7 +13,7 @@ abstract class _HomeControllerBase with Store {
       iconPressed: () {},
       assetName: 'assets/icons/school.svg',
       action: () {
-        Modular.link.pushNamed('/categorias');
+        Modular.link.pushNamed('/home/categorias');
       });
 
   HomeWidgetModel dicionario = HomeWidgetModel(
@@ -21,7 +21,7 @@ abstract class _HomeControllerBase with Store {
       iconPressed: () {},
       assetName: 'assets/icons/school.svg',
       action: () {
-        Modular.link.pushNamed('/dicionario');
+        Modular.link.pushNamed('/home/dicionario');
       });
 
   HomeWidgetModel favoritos = HomeWidgetModel(
@@ -29,7 +29,7 @@ abstract class _HomeControllerBase with Store {
       iconPressed: () {},
       assetName: 'assets/icons/school.svg',
       action: () {
-        Modular.link.pushNamed('/favoritos');
+        Modular.link.pushNamed('/home/favoritos');
       });
 
   HomeWidgetModel historico = HomeWidgetModel(
@@ -37,7 +37,7 @@ abstract class _HomeControllerBase with Store {
       iconPressed: () {},
       assetName: 'assets/icons/school.svg',
       action: () {
-        Modular.link.pushNamed('/historico');
+        Modular.link.pushNamed('/home/historico');
       });
 
   HomeWidgetModel minhasCategorias = HomeWidgetModel(
@@ -45,7 +45,7 @@ abstract class _HomeControllerBase with Store {
       iconPressed: () {},
       assetName: 'assets/icons/school.svg',
       action: () {
-        Modular.link.pushNamed('/minhasCategorias');
+        Modular.link.pushNamed('/home/minhasCategorias');
       });
 
   HomeWidgetModel removerPropagandas = HomeWidgetModel(

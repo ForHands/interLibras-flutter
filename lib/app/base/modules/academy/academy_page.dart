@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:interLibras/app/shared/widgets/bottom_bar_widget.dart';
 import 'academy_controller.dart';
 
 class AcademyPage extends StatefulWidget {
@@ -19,7 +18,6 @@ class _AcademyPageState extends ModularState<AcademyPage, AcademyController> {
     return WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
-          bottomNavigationBar: BottomBarWidget(),
           appBar: AppBar(
             title: Text(widget.title),
           ),

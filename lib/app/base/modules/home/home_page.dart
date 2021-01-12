@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:interLibras/app/shared/utils/size_config.dart';
-import 'package:interLibras/app/shared/widgets/bottom_bar_widget.dart';
 import 'package:interLibras/app/shared/widgets/home_card_widget.dart';
 import 'home_controller.dart';
 
@@ -28,7 +27,6 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
     return WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
-          bottomNavigationBar: BottomBarWidget(),
           appBar: AppBar(
             title: Text(widget.title),
           ),
