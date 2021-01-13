@@ -19,60 +19,38 @@ final $BaseController = BindInject(
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$BaseController on _BaseControllerBase, Store {
-  final _$currentPageAtom = Atom(name: '_BaseControllerBase.currentPage');
+  final _$currentTabAtom = Atom(name: '_BaseControllerBase.currentTab');
 
   @override
-  int get currentPage {
-    _$currentPageAtom.reportRead();
-    return super.currentPage;
+  int get currentTab {
+    _$currentTabAtom.reportRead();
+    return super.currentTab;
   }
 
   @override
-  set currentPage(int value) {
-    _$currentPageAtom.reportWrite(value, super.currentPage, () {
-      super.currentPage = value;
+  set currentTab(int value) {
+    _$currentTabAtom.reportWrite(value, super.currentTab, () {
+      super.currentTab = value;
     });
   }
 
-  final _$screenAtom = Atom(name: '_BaseControllerBase.screen');
+  final _$handleWillPopAsyncAction =
+      AsyncAction('_BaseControllerBase.handleWillPop');
 
   @override
-  Widget get screen {
-    _$screenAtom.reportRead();
-    return super.screen;
-  }
-
-  @override
-  set screen(Widget value) {
-    _$screenAtom.reportWrite(value, super.screen, () {
-      super.screen = value;
-    });
-  }
-
-  final _$screenNameAtom = Atom(name: '_BaseControllerBase.screenName');
-
-  @override
-  String get screenName {
-    _$screenNameAtom.reportRead();
-    return super.screenName;
-  }
-
-  @override
-  set screenName(String value) {
-    _$screenNameAtom.reportWrite(value, super.screenName, () {
-      super.screenName = value;
-    });
+  Future<bool> handleWillPop() {
+    return _$handleWillPopAsyncAction.run(() => super.handleWillPop());
   }
 
   final _$_BaseControllerBaseActionController =
       ActionController(name: '_BaseControllerBase');
 
   @override
-  void setScreen(int page) {
+  void selectTab(int index, bool backButton) {
     final _$actionInfo = _$_BaseControllerBaseActionController.startAction(
-        name: '_BaseControllerBase.setScreen');
+        name: '_BaseControllerBase.selectTab');
     try {
-      return super.setScreen(page);
+      return super.selectTab(index, backButton);
     } finally {
       _$_BaseControllerBaseActionController.endAction(_$actionInfo);
     }
@@ -81,9 +59,7 @@ mixin _$BaseController on _BaseControllerBase, Store {
   @override
   String toString() {
     return '''
-currentPage: ${currentPage},
-screen: ${screen},
-screenName: ${screenName}
+currentTab: ${currentTab}
     ''';
   }
 }

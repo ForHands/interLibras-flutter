@@ -8,62 +8,75 @@ part 'home_controller.g.dart';
 class HomeController = _HomeControllerBase with _$HomeController;
 
 abstract class _HomeControllerBase with Store {
-  HomeWidgetModel categorias = HomeWidgetModel(
-      name: 'Categorias',
-      iconPressed: () {},
-      assetName: 'assets/icons/school.svg',
-      action: () {
-        Modular.link.pushNamed('/home/categorias');
-      });
-
-  HomeWidgetModel dicionario = HomeWidgetModel(
-      name: 'Dicionário',
-      iconPressed: () {},
-      assetName: 'assets/icons/school.svg',
-      action: () {
-        Modular.link.pushNamed('/home/dicionario');
-      });
-
-  HomeWidgetModel favoritos = HomeWidgetModel(
-      name: 'Favoritos',
-      iconPressed: () {},
-      assetName: 'assets/icons/school.svg',
-      action: () {
-        Modular.link.pushNamed('/home/favoritos');
-      });
-
-  HomeWidgetModel historico = HomeWidgetModel(
-      name: 'Histórico',
-      iconPressed: () {},
-      assetName: 'assets/icons/school.svg',
-      action: () {
-        Modular.link.pushNamed('/home/historico');
-      });
-
-  HomeWidgetModel minhasCategorias = HomeWidgetModel(
-      name: 'Minhas Categorias',
-      iconPressed: () {},
-      assetName: 'assets/icons/school.svg',
-      action: () {
-        Modular.link.pushNamed('/home/minhasCategorias');
-      });
-
-  HomeWidgetModel removerPropagandas = HomeWidgetModel(
-      name: 'Remover Propragandas',
-      iconPressed: () {},
-      assetName: 'assets/icons/school.svg',
-      action: () {});
-
   ObservableList<HomeWidgetModel> cards = ObservableList<HomeWidgetModel>();
+
+  @observable
+  int homeIndexPage = 0;
+
+  @action
+  void setHomePage(int index) {
+    homeIndexPage = index;
+  }
 
   @action
   void intializeCards() {
     cards.clear();
+    HomeWidgetModel categorias = HomeWidgetModel(
+        name: 'Categorias',
+        iconPressed: () {},
+        assetName: 'assets/icons/school.svg',
+        action: () {
+          setHomePage(1);
+        });
+
+    HomeWidgetModel dicionario = HomeWidgetModel(
+        name: 'Dicionário',
+        iconPressed: () {},
+        assetName: 'assets/icons/school.svg',
+        action: () {
+          setHomePage(2);
+        });
+
+    HomeWidgetModel favoritos = HomeWidgetModel(
+        name: 'Favoritos',
+        iconPressed: () {},
+        assetName: 'assets/icons/school.svg',
+        action: () {
+          setHomePage(3);
+        });
+
+    HomeWidgetModel historico = HomeWidgetModel(
+        name: 'Histórico',
+        iconPressed: () {},
+        assetName: 'assets/icons/school.svg',
+        action: () {
+          setHomePage(4);
+        });
+
+    HomeWidgetModel minhasCategorias = HomeWidgetModel(
+        name: 'Minhas Categorias',
+        iconPressed: () {},
+        assetName: 'assets/icons/school.svg',
+        action: () {
+          setHomePage(5);
+        });
+
+    HomeWidgetModel removerPropagandas = HomeWidgetModel(
+        name: 'Remover Propragandas',
+        iconPressed: () {},
+        assetName: 'assets/icons/school.svg',
+        action: () {});
     cards.add(categorias);
     cards.add(dicionario);
     cards.add(favoritos);
     cards.add(historico);
     cards.add(minhasCategorias);
     cards.add(removerPropagandas);
+  }
+
+  @action
+  Future<bool> handleWillPop() async {
+    setHomePage(0);
+    return false;
   }
 }

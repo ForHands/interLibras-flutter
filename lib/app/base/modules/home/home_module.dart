@@ -1,3 +1,9 @@
+import 'package:interLibras/app/base/modules/home/modules/categorias/categorias_controller.dart';
+import 'package:interLibras/app/base/modules/home/modules/dicionario/dicionario_controller.dart';
+import 'package:interLibras/app/base/modules/home/modules/favoritos/favoritos_controller.dart';
+import 'package:interLibras/app/base/modules/home/modules/historico/historico_controller.dart';
+import 'package:interLibras/app/base/modules/home/modules/minhas_categorias/minhas_categorias_controller.dart';
+
 import 'home_controller.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -12,6 +18,11 @@ class HomeModule extends ChildModule {
   @override
   List<Bind> get binds => [
         $HomeController,
+        $CategoriasController,
+        $DicionarioController,
+        $FavoritosController,
+        $HistoricoController,
+        $MinhasCategoriasController
       ];
 
   @override

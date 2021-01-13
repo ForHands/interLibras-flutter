@@ -21,7 +21,7 @@ class _DicionarioPageState
         title: Text(widget.title),
       ),
       body: Column(
-        children: <Widget>[],
+        children: <Widget>[Text('HAHAHAHA')],
       ),
     );
   }

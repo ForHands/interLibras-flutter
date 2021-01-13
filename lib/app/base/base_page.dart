@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:interLibras/app/shared/utils/size_config.dart';
-import 'package:interLibras/app/shared/widgets/app_bar_widget.dart';
 import 'package:interLibras/app/shared/widgets/bottom_bar_widget.dart';
-
 import 'base_controller.dart';
 
 class BasePage extends StatefulWidget {
@@ -16,23 +13,32 @@ class BasePage extends StatefulWidget {
 }
 
 class _BasePageState extends ModularState<BasePage, BaseController> {
-  //use 'controller' variable to access controller
+  @override
+  void initState() {
+    super.initState();
+    controller.tabs.asMap().forEach((index, details) {
+      details.setIndex(index);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-        onWillPop: () async => false,
-        child: Observer(
-          builder: (_) {
-            return Scaffold(
-                appBar: AppBarWidget(
-                  language: 'Brasil',
-                  screeName: controller.screenName,
-                  iconPressed: () {},
-                ),
-                bottomNavigationBar: BottomBarWidget(),
-                body: controller.screen);
-          },
-        ));
+    return Observer(
+      builder: (_) {
+        return WillPopScope(
+          onWillPop: controller.handleWillPop,
+          child: Scaffold(
+            body: IndexedStack(
+              index: controller.currentTab,
+              children: controller.tabs.map((e) => e.page).toList(),
+            ),
+            bottomNavigationBar: BottomBarWidget(
+              onSelectTab: (index) => controller.selectTab(index, false),
+              tabs: controller.tabs,
+            ),
+          ),
+        );
+      },
+    );
   }
 }

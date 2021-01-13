@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:interLibras/app/shared/widgets/app_bar_widget.dart';
 import 'profile_controller.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -15,8 +16,12 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[],
-    );
+    return Scaffold(
+        appBar: AppBarWidget(
+          iconPressed: () {},
+          screeName: widget.title,
+          language: 'Brasil',
+        ),
+        body: Container());
   }
 }
