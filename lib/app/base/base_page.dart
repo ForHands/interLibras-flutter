@@ -23,7 +23,25 @@ class _BasePageState extends ModularState<BasePage, BaseController> {
 
   @override
   Widget build(BuildContext context) {
-    return Observer(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        RaisedButton(
+          child: Text('settings'),
+          onPressed: () {
+            Modular.link.pushNamed('/settings');
+          },
+        ),
+        RaisedButton(
+          child: Text('about'),
+          onPressed: () {
+            Modular.link.pushNamed('/about');
+          },
+        ),
+      ],
+    );
+  }
+  /*return Observer(
       builder: (_) {
         return WillPopScope(
           onWillPop: controller.handleWillPop,
@@ -40,5 +58,5 @@ class _BasePageState extends ModularState<BasePage, BaseController> {
         );
       },
     );
-  }
+  }*/
 }
