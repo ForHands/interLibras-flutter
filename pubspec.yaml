@@ -39,6 +39,7 @@ dependencies:
   flutter_modular: ^2.0.1
   flutter:
     sdk: flutter
+  google_fonts: ^1.1.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -62,10 +63,6 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-  assets:
-    - assets/images
-    - assets/icons
-    - assets/model_3d
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
