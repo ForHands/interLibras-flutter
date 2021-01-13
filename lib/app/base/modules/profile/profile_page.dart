@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:interLibras/app/shared/widgets/app_bar_widget.dart';
+import 'package:interLibras/app/shared/widgets/drawer_widget.dart';
 import 'profile_controller.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -16,12 +17,16 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBarWidget(
-          iconPressed: () {},
-          screeName: widget.title,
-          language: 'Brasil',
-        ),
-        body: Container());
+    return SafeArea(
+        child: Scaffold(
+            endDrawer: MenuDrawer(),
+            key: controller.scaffoldKey,
+            appBar: AppBarWidget(
+                iconPressed: () {},
+                screeName: widget.title,
+                language: 'Brasil',
+                scaffoldKey: controller.scaffoldKey,
+                disableLang: true),
+            body: Container()));
   }
 }

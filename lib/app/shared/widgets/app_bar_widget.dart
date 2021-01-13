@@ -4,14 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:interLibras/app/shared/utils/size_config.dart';
 import 'package:interLibras/app/shared/utils/theme.dart';
 
+import 'drawer_widget.dart';
+
 class AppBarWidget extends StatefulWidget implements PreferredSizeWidget {
   final String screeName;
   final Function iconPressed;
   final String language;
+  final bool disableLang;
+  final GlobalKey<ScaffoldState> scaffoldKey;
 
   AppBarWidget(
       {Key key,
       @required this.screeName,
+      this.disableLang = false,
+      this.scaffoldKey,
       @required this.language,
       @required this.iconPressed})
       : preferredSize = Size.fromHeight(86),
@@ -61,42 +67,55 @@ class _AppBarState extends State<AppBarWidget> {
               ],
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(right: 10, bottom: 15),
-            child: Container(
-                width: 180,
-                height: 40,
-                decoration: BoxDecoration(
-                  color: Color(0xFF09D89A),
-                  borderRadius: BorderRadius.all(Radius.circular(16)),
-                ),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        width: 140,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          !widget.disableLang
+              ? Padding(
+                  padding: EdgeInsets.only(right: 10, bottom: 15),
+                  child: Container(
+                      width: 180,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF09D89A),
+                        borderRadius: BorderRadius.all(Radius.circular(16)),
+                      ),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Icon(
-                              Icons.repeat,
-                              color: Colors.white,
-                              size: 28,
+                            Container(
+                              width: 140,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Icon(
+                                    Icons.repeat,
+                                    color: Colors.white,
+                                    size: 28,
+                                  ),
+                                  Text(
+                                    widget.language,
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 24),
+                                  ),
+                                ],
+                              ),
                             ),
-                            Text(
-                              widget.language,
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 24),
+                            Container(
+                              width: 40,
+                              child: Image.asset('assets/images/linguagem.png'),
                             ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width: 40,
-                        child: Image.asset('assets/images/linguagem.png'),
-                      ),
-                    ])),
-          )
+                          ])),
+                )
+              : Center(
+                  child: IconButton(
+                    icon: const Icon(
+                      Icons.menu,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                    onPressed: () =>
+                        widget.scaffoldKey.currentState.openEndDrawer(),
+                  ),
+                )
         ],
       ),
     );
