@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:interLibras/app/shared/utils/size_config.dart';
+import 'package:interLibras/app/shared/utils/theme.dart';
+import 'package:interLibras/app/shared/widgets/app_bar_widget.dart';
+import 'package:interLibras/app/shared/widgets/config_component_widget.dart';
 import 'settings_controller.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -15,13 +19,47 @@ class _SettingsPageState
   //use 'controller' variable to access controller
 
   @override
+  void initState() {
+    super.initState();
+    controller.intializeTiles();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+      appBar: AppBarWidgetNoLang(
+        iconPressed: () {},
+        screeName: 'Configurações',
       ),
       body: Column(
-        children: <Widget>[],
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            child: ListView.builder(
+              scrollDirection: Axis.vertical,
+              itemCount: controller.configTiles.length,
+              itemBuilder: (BuildContext ctxt, int index) {
+                return Padding(
+                  padding: EdgeInsets.only(top: 10, bottom: 5),
+                  child: ConfigComponentWidget(
+                    title: controller.configTiles[index].title,
+                    icon: controller.configTiles[index].icon,
+                  ),
+                );
+              },
+            ),
+          ),
+          Column(
+            children: [
+              Image.asset('assets/images/hand.png'),
+              Text(
+                'Versão 1.00.001',
+                style: TextStyle(color: Colors.black),
+              )
+            ],
+          ),
+        ],
       ),
     );
   }

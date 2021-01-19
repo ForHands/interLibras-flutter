@@ -17,16 +17,15 @@ class _ProfilePageState extends ModularState<ProfilePage, ProfileController> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-            endDrawer: MenuDrawer(),
-            key: controller.scaffoldKey,
-            appBar: AppBarWidget(
-                iconPressed: () {},
-                screeName: widget.title,
-                language: 'Brasil',
-                scaffoldKey: controller.scaffoldKey,
-                disableLang: true),
-            body: Container()));
+    return Scaffold(
+        endDrawer: MenuDrawer(),
+        key: controller.scaffoldKey,
+        appBar: AppBarWidget(
+            iconPressed: () {},
+            screeName: widget.title,
+            language: 'Brasil',
+            scaffoldKey: controller.scaffoldKey,
+            disableLang: true),
+        body: Container());
   }
 }

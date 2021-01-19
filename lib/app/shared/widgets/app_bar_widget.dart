@@ -1,10 +1,9 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:interLibras/app/shared/utils/size_config.dart';
 import 'package:interLibras/app/shared/utils/theme.dart';
-
-import 'drawer_widget.dart';
 
 class AppBarWidget extends StatefulWidget implements PreferredSizeWidget {
   final String screeName;
@@ -119,5 +118,83 @@ class _AppBarState extends State<AppBarWidget> {
         ],
       ),
     );
+  }
+}
+
+class AppBarWidgetNoLang extends StatefulWidget implements PreferredSizeWidget {
+  final String screeName;
+  final Function iconPressed;
+  AppBarWidgetNoLang({
+    Key key,
+    @required this.screeName,
+    @required this.iconPressed,
+  })  : preferredSize = Size.fromHeight(80),
+        super(key: key);
+
+  @override
+  final Size preferredSize;
+  @override
+  _AppBarWidgetNoLangState createState() => _AppBarWidgetNoLangState();
+}
+
+class _AppBarWidgetNoLangState extends State<AppBarWidgetNoLang> {
+  @override
+  Widget build(BuildContext context) {
+    SizeConfig().init(context);
+    return Container(
+        height: widget.preferredSize.height,
+        width: SizeConfig.screenWidth,
+        decoration: BoxDecoration(
+          color: ThemeApp.primaryColor,
+          borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(16),
+              bottomLeft: Radius.circular(16)),
+        ),
+        child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: Center(
+                  child: IconButton(
+                    onPressed: () {
+                      Modular.link.pop();
+                    },
+                    icon: Icon(
+                      Icons.arrow_back,
+                      size: 40,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                  padding: EdgeInsets.only(right: 20),
+                  child: Center(
+                    child: Row(
+                      children: [
+                        Text(
+                          widget.screeName,
+                          style: GoogleFonts.poppins(
+                            textStyle:
+                                TextStyle(color: Colors.white, fontSize: 24.0),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        GestureDetector(
+                          onTap: widget.iconPressed,
+                          child: Icon(
+                            Icons.play_circle_outline_outlined,
+                            color: Colors.white,
+                            size: 26,
+                          ),
+                        )
+                      ],
+                    ),
+                  )),
+            ]));
   }
 }
