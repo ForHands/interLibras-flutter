@@ -24,14 +24,8 @@ abstract class _BaseControllerBase with Store {
   ObservableList<int> lastTab = ObservableList<int>();
 
   final List<TabItem> tabs = [
+    TabItem(icon: Icons.home, page: HomePage(), size: 30, svg: null),
     TabItem(
-        tabName: "Home",
-        icon: Icons.home,
-        page: HomePage(),
-        size: 30,
-        svg: null),
-    TabItem(
-      tabName: "Ensino",
       svg: 'assets/icons/school.svg',
       icon: null,
       size: null,
@@ -39,17 +33,11 @@ abstract class _BaseControllerBase with Store {
     ),
     TabItem(
       svg: 'assets/icons/interpreter.svg',
-      tabName: "Interpreter",
       size: null,
       icon: null,
       page: InterpreterPage(),
     ),
-    TabItem(
-        tabName: "Perfil",
-        icon: Icons.person,
-        page: ProfilePage(),
-        size: 30,
-        svg: null),
+    TabItem(icon: Icons.person, page: ProfilePage(), size: 30, svg: null),
   ];
 
   @action

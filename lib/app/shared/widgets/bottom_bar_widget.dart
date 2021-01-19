@@ -15,6 +15,7 @@ class BottomBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      selectedFontSize: 0,
       backgroundColor: ThemeApp.accentColor,
       type: BottomNavigationBarType.fixed,
       items: tabs
@@ -22,7 +23,6 @@ class BottomBarWidget extends StatelessWidget {
             (e) => _buildItem(
               index: e.getIndex(),
               icon: e.icon,
-              tabName: e.tabName,
               size: e.size,
               svg: e.svg,
             ),
@@ -37,7 +37,6 @@ class BottomBarWidget extends StatelessWidget {
   BottomNavigationBarItem _buildItem({
     int index,
     IconData icon,
-    String tabName,
     String svg,
     double size,
   }) {
@@ -54,13 +53,7 @@ class BottomBarWidget extends StatelessWidget {
               width: 28,
               color: _tabColor(index: index),
             ),
-      title: Text(
-        tabName,
-        style: TextStyle(
-          color: _tabColor(index: index),
-          fontSize: 16,
-        ),
-      ),
+      label: '',
     );
   }
 

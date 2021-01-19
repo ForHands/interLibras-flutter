@@ -6,13 +6,11 @@ import 'package:interLibras/app/base/base_controller.dart';
 class TabItem {
   final String svg;
   final double size;
-  final String tabName;
   final IconData icon;
   final GlobalKey<NavigatorState> key = GlobalKey<NavigatorState>();
   int _index = 0;
   Widget _page;
   TabItem({
-    @required this.tabName,
     @required this.icon,
     this.svg,
     this.size,

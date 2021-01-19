@@ -10,7 +10,7 @@ class AppWidget extends StatelessWidget {
       navigatorKey: Modular.navigatorKey,
       title: 'Intersign',
       theme: ThemeApp.getThemeData,
-      initialRoute: '/base',
+      initialRoute: '/',
       onGenerateRoute: Modular.generateRoute,
     );
   }
