@@ -23,15 +23,12 @@ class _CategoriasPageState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: ListView.builder(
         scrollDirection: Axis.vertical,
         itemCount: controller.categories.length,
         itemBuilder: (BuildContext ctxt, int index) {
           return Padding(
-            padding: EdgeInsets.only(top: 10, bottom: 5),
+            padding: EdgeInsets.only(top: 10, bottom: 5, right: 10, left: 10),
             child: CategoryCard(category: controller.categories[index]),
           );
         },

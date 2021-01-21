@@ -12,6 +12,7 @@ class ThemeApp {
   static final Color primaryColor = Color(0xFF05F0AA);
   static final Color accentColor = Color(0xFFF7F7F9);
   static final Color textColor = Color(0xFF494848);
+  static final Color purple = Color(0xFFCF00F0);
   static final BorderSide borderSide =
       BorderSide(color: Color(0xffD2D2D2), width: 1);
 

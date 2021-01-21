@@ -8,7 +8,7 @@ class CategoryModel {
   CategoryModel.newCat() {
     name = 'Criar Nova';
     newCategory = true;
-    urlsImages = [];
+    urlsImages = ['intial'];
   }
   String name;
   bool newCategory;

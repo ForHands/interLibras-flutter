@@ -16,8 +16,18 @@ abstract class _CategoriasControllerBase with Store {
     categories.clear();
     CategoryModel defaultCat = CategoryModel.newCat();
     CategoryModel cate1 =
+        CategoryModel(name: 'Favoritos', newCategory: false, urlsImages: [
+      'assets/images/block.png',
+      'assets/images/block.png',
+      'assets/images/block.png',
+      'assets/images/block.png',
+      'assets/images/block.png',
+      'assets/images/block.png'
+    ]);
+    CategoryModel cate2 =
         CategoryModel(name: 'Favoritos', newCategory: false, urlsImages: []);
     categories.add(defaultCat);
     categories.add(cate1);
+    categories.add(cate2);
   }
 }
