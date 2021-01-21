@@ -1,3 +1,4 @@
+import 'package:interLibras/app/shared/models/category_model.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -8,11 +9,15 @@ class CategoriasController = _CategoriasControllerBase
     with _$CategoriasController;
 
 abstract class _CategoriasControllerBase with Store {
-  @observable
-  int value = 0;
+  ObservableList<CategoryModel> categories = ObservableList<CategoryModel>();
 
   @action
-  void increment() {
-    value++;
+  void initializeCategories() {
+    categories.clear();
+    CategoryModel defaultCat = CategoryModel.newCat();
+    CategoryModel cate1 =
+        CategoryModel(name: 'Favoritos', newCategory: false, urlsImages: []);
+    categories.add(defaultCat);
+    categories.add(cate1);
   }
 }

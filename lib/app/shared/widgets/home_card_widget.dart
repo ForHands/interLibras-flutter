@@ -6,6 +6,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:interLibras/app/shared/utils/size_config.dart';
 import 'package:interLibras/app/shared/utils/theme.dart';
 
+import 'name_play_widget.dart';
+
 class HomeCardWidget extends StatelessWidget {
   final String name;
   final String assetName;
@@ -52,28 +54,13 @@ class HomeCardWidget extends StatelessWidget {
                   alignment: Alignment.bottomCenter,
                   child: Padding(
                     padding: EdgeInsets.only(bottom: 5),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                            width: SizeConfig.screenWidth / 4,
-                            child: AutoSizeText(
-                              name,
-                              minFontSize: 14,
-                              maxFontSize: 18,
-                              maxLines: 2,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: ThemeApp.textColor, fontSize: 18),
-                            )),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        GestureDetector(
-                          onTap: iconPressed,
-                          child: Icon(Icons.play_circle_outline_outlined),
-                        )
-                      ],
+                    child: NamePlayWiget(
+                      width: SizeConfig.screenWidth / 4,
+                      name: name,
+                      iconPressed: iconPressed,
+                      minFontSize: 14,
+                      maxFontSize: 18,
+                      fontSize: 18,
                     ),
                   ),
                 ))

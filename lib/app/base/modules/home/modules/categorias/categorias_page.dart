@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:interLibras/app/shared/widgets/category_card_widget.dart';
 import 'categorias_controller.dart';
 
 class CategoriasPage extends StatefulWidget {
@@ -13,6 +14,11 @@ class CategoriasPage extends StatefulWidget {
 class _CategoriasPageState
     extends ModularState<CategoriasPage, CategoriasController> {
   //use 'controller' variable to access controller
+  @override
+  void initState() {
+    super.initState();
+    controller.initializeCategories();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +26,15 @@ class _CategoriasPageState
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(
-        children: <Widget>[],
+      body: ListView.builder(
+        scrollDirection: Axis.vertical,
+        itemCount: controller.categories.length,
+        itemBuilder: (BuildContext ctxt, int index) {
+          return Padding(
+            padding: EdgeInsets.only(top: 10, bottom: 5),
+            child: CategoryCard(category: controller.categories[index]),
+          );
+        },
       ),
     );
   }

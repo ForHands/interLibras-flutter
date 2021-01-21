@@ -67,19 +67,22 @@ class _AboutPageState extends ModularState<AboutPage, AboutController> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Wrap(
-                    alignment: WrapAlignment.center,
-                    children: [
-                      Text(
-                        'InterSIgn é um aplicativo criado pela For Hands - Desenvolvimento de Programas LTDA CNPJ: 36.486.449/0001-59',
-                        style: TextStyle(
-                            fontFamily: 'Poppins',
-                            color: Colors.black,
-                            fontSize: 17,
-                            height: 1.5),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
+                  Padding(
+                    padding: EdgeInsets.only(left: 5, right: 5),
+                    child: Wrap(
+                      alignment: WrapAlignment.center,
+                      children: [
+                        Text(
+                          'InterSIgn é um aplicativo criado pela For Hands - Desenvolvimento de Programas LTDA CNPJ: 36.486.449/0001-59',
+                          style: TextStyle(
+                              fontFamily: 'Poppins',
+                              color: Colors.black,
+                              fontSize: 17,
+                              height: 1.5),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
                   ),
                   Column(
                     children: [
