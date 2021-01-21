@@ -1,3 +1,4 @@
+import 'package:interLibras/app/shared/models/language_model.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -8,10 +9,8 @@ class AppController = _AppControllerBase with _$AppController;
 
 abstract class _AppControllerBase with Store {
   @observable
-  int value = 0;
+  LanguageModel currentLanguage = LanguageModel(language: "LIBRAS", flag: 'br');
 
   @action
-  void increment() {
-    value++;
-  }
+  changeCurrentLanguage(LanguageModel language) => currentLanguage = language;
 }

@@ -35,6 +35,7 @@ dependencies:
   flutter_svg: ^0.19.2+1
   google_fonts: ^1.1.1
   dio: ^3.0.10
+  flag: ^3.2.0
   flutter_mobx: ^1.1.0+2
   mobx: ^1.2.1+4
   flutter_modular: ^2.0.1
@@ -66,14 +67,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/images/cubo1.svg
-    - assets/images/cubo2.svg
-    - assets/images/cubo3.svg
-    - assets/images/cubo4.svg
-    - assets/images/cubo5.svg
-    - assets/images/cubo6.svg
-    - assets/images/linguagem.png
-    - assets/images/hand.png
+    - assets/images/
   #  - assets/model_3d
     - assets/icons/school.svg
     - assets/icons/interpreter.svg

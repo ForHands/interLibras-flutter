@@ -1,7 +1,11 @@
 import 'dart:ui';
+import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:interLibras/app/app_controller.dart';
+import 'package:interLibras/app/shared/models/language_model.dart';
 import 'package:interLibras/app/shared/utils/size_config.dart';
 import 'package:interLibras/app/shared/utils/theme.dart';
 
@@ -29,6 +33,55 @@ class AppBarWidget extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _AppBarState extends State<AppBarWidget> {
+  final controller = Modular.get<AppController>();
+  List<Widget> returnEnumAsWidget(BuildContext context) {
+    List<Widget> widgetsEnum = [];
+    EnumLanguage.values.forEach((enumIndex) {
+      widgetsEnum.add(SimpleDialogOption(
+        onPressed: () {
+          controller.changeCurrentLanguage(enumLanguageToObject(enumIndex));
+          Navigator.pop(context);
+        },
+        child: Row(
+          children: [
+            Flag(
+              enumLanguageToObject(enumIndex).flag,
+              height: 30,
+              width: 30,
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Text(enumLanguageToObject(enumIndex).language,
+                style: GoogleFonts.poppins(
+                  textStyle: TextStyle(color: Colors.black, fontSize: 24.0),
+                ))
+          ],
+        ),
+      ));
+    });
+
+    return widgetsEnum;
+  }
+
+  Future<void> _askedToLead() async {
+    switch (await showDialog<EnumLanguage>(
+        context: context,
+        builder: (BuildContext context) {
+          return SimpleDialog(
+              title:
+                  const Text('Qual linguagem você gostaria como a principal?'),
+              children: returnEnumAsWidget(context));
+        })) {
+      case EnumLanguage.libras:
+        print(EnumLanguage.libras);
+        break;
+      case EnumLanguage.asl:
+        print(EnumLanguage.asl);
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -67,42 +120,73 @@ class _AppBarState extends State<AppBarWidget> {
             ),
           ),
           !widget.disableLang
-              ? Padding(
-                  padding: EdgeInsets.only(right: 10, bottom: 15),
-                  child: Container(
-                      width: 180,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: Color(0xFF09D89A),
-                        borderRadius: BorderRadius.all(Radius.circular(16)),
-                      ),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              width: 140,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Icon(
-                                    Icons.repeat,
-                                    color: Colors.white,
-                                    size: 28,
-                                  ),
-                                  Text(
-                                    widget.language,
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 24),
-                                  ),
-                                ],
+              ? GestureDetector(
+                  onTap: _askedToLead,
+                  child: Padding(
+                      padding: EdgeInsets.only(right: 10, bottom: 15),
+                      child: ConstrainedBox(
+                          constraints: BoxConstraints(minWidth: 140),
+                          child: Container(
+                              decoration: BoxDecoration(
+                                color: Color(0xFF09D89A),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(16)),
                               ),
-                            ),
-                            Container(
-                              width: 40,
-                              child: Image.asset('assets/images/linguagem.png'),
-                            ),
-                          ])),
+                              child: Observer(
+                                builder: (_) {
+                                  return Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Container(
+                                          child: Row(
+                                            children: [
+                                              const SizedBox(
+                                                width: 4,
+                                              ),
+                                              Icon(
+                                                Icons.repeat,
+                                                color: Colors.white,
+                                                size: 28,
+                                              ),
+                                              const SizedBox(
+                                                width: 10,
+                                              ),
+                                              Text(
+                                                controller
+                                                    .currentLanguage.language,
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 24),
+                                              ),
+                                              const SizedBox(
+                                                width: 10,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Container(
+                                          width: 40,
+                                          child: Image.asset(controller
+                                                      .currentLanguage.flag ==
+                                                  'br'
+                                              ? 'assets/images/linguagem.png'
+                                              : 'assets/images/Linguagem_asl.png'),
+                                        )
+                                        /*Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(15))),
+                                    child: Flag(
+                                      controller.currentLanguage.flag,
+                                      height: 45,
+                                      width: 45,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),*/
+                                      ]);
+                                },
+                              )))),
                 )
               : Center(
                   child: IconButton(
@@ -198,3 +282,16 @@ class _AppBarWidgetNoLangState extends State<AppBarWidgetNoLang> {
             ]));
   }
 }
+
+/*
+SimpleDialogOption(
+                onPressed: () {
+                  print(EnumLanguage.asl);
+                },
+                child: Text('ASL',
+                    style: GoogleFonts.poppins(
+                      textStyle: TextStyle(color: Colors.black, fontSize: 24.0),
+                    )),
+              )
+
+*/
