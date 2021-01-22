@@ -24,7 +24,7 @@ class _CategoryCardState extends State<CategoryCard> {
       ),
       child: Container(
         width: SizeConfig.screenWidth - 50,
-        height: 180,
+        height: SizeConfig.screenHeight / 4,
         child: Stack(
           children: [
             Positioned(right: 8, top: 8, child: DeleteButtonWidget()),
@@ -38,7 +38,8 @@ class _CategoryCardState extends State<CategoryCard> {
                   : widget.category.urlsImages.isEmpty
                       ? Image.asset('assets/images/block.png')
                       : Padding(
-                          padding: EdgeInsets.only(top: 20),
+                          padding: EdgeInsets.only(
+                              top: SizeConfig.blockSizeVertical * 2),
                           child: ListImagesCard(category: widget.category),
                         ),
             ),

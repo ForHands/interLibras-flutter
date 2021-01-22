@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:interLibras/app/shared/widgets/category_card_widget.dart';
+import 'package:interLibras/app/shared/widgets/item_card_widget.dart';
 import 'categorias_controller.dart';
 
 class CategoriasPage extends StatefulWidget {
@@ -23,6 +23,62 @@ class _CategoriasPageState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: ListView(
+        shrinkWrap: true,
+        children: [
+          Center(
+              child: ItemWidget(
+            backFlag: 'assets/images/Linguagem_asl.png',
+            frontFlag: 'assets/images/linguagem.png',
+            name: 'Laranja',
+            englishName: 'Orange',
+            favorite: false,
+            pressedFavorite: () {},
+            image: 'assets/images/block.png',
+          )),
+          Center(
+              child: ItemWidget(
+            backFlag: 'assets/images/Linguagem_asl.png',
+            frontFlag: 'assets/images/linguagem.png',
+            name: 'Maçã',
+            englishName: 'Apple',
+            favorite: true,
+            pressedFavorite: () {},
+            image: 'assets/images/block.png',
+          )),
+          Center(
+              child: ItemWidget(
+            backFlag: 'assets/images/Linguagem_asl.png',
+            frontFlag: 'assets/images/linguagem.png',
+            name: 'Laranja',
+            englishName: 'Orange',
+            favorite: false,
+            pressedFavorite: () {},
+            image: 'assets/images/block.png',
+          )),
+          Center(
+              child: ItemWidget(
+            backFlag: 'assets/images/Linguagem_asl.png',
+            frontFlag: 'assets/images/linguagem.png',
+            name: 'Maçã',
+            englishName: 'Apple',
+            favorite: true,
+            pressedFavorite: () {},
+            image: 'assets/images/block.png',
+          ))
+        ],
+      ),
+    );
+  }
+}
+/* 
+
+          
+
+
+ @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       body: ListView.builder(
         scrollDirection: Axis.vertical,
         itemCount: controller.categories.length,
@@ -34,5 +90,4 @@ class _CategoriasPageState
         },
       ),
     );
-  }
-}
+  }*/
