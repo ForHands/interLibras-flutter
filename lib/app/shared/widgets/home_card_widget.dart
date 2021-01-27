@@ -11,12 +11,16 @@ import 'name_play_widget.dart';
 class HomeCardWidget extends StatelessWidget {
   final String name;
   final String assetName;
+  final double minFontSize;
+  final double maxFontSize;
   final Function action;
   final Function iconPressed;
   const HomeCardWidget(
       {Key key,
       @required this.name,
       @required this.assetName,
+      @required this.minFontSize,
+      @required this.maxFontSize,
       @required this.iconPressed,
       @required this.action})
       : super(key: key);
@@ -58,8 +62,8 @@ class HomeCardWidget extends StatelessWidget {
                       width: SizeConfig.screenWidth / 4,
                       name: name,
                       iconPressed: iconPressed,
-                      minFontSize: 14,
-                      maxFontSize: 18,
+                      minFontSize: minFontSize,
+                      maxFontSize: maxFontSize,
                       fontSize: 18,
                     ),
                   ),

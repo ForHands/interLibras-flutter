@@ -76,6 +76,8 @@ class _BodyHomeState extends State<BodyHome> {
           return new Padding(
             padding: EdgeInsets.all(3),
             child: HomeCardWidget(
+              maxFontSize: controller.cards[index].maxFontSize,
+              minFontSize: controller.cards[index].minFontSize,
               name: controller.cards[index].name,
               assetName: controller.cards[index].assetName,
               action: controller.cards[index].action,

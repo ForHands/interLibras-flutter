@@ -22,6 +22,8 @@ abstract class _HomeControllerBase with Store {
   void intializeCards() {
     cards.clear();
     HomeWidgetModel categorias = HomeWidgetModel(
+        maxFontSize: 18,
+        minFontSize: 14,
         name: 'Categorias',
         iconPressed: () {},
         assetName: 'assets/icons/school.svg',
@@ -30,6 +32,8 @@ abstract class _HomeControllerBase with Store {
         });
 
     HomeWidgetModel dicionario = HomeWidgetModel(
+        maxFontSize: 18,
+        minFontSize: 14,
         name: 'Dicionário',
         iconPressed: () {},
         assetName: 'assets/icons/school.svg',
@@ -38,6 +42,8 @@ abstract class _HomeControllerBase with Store {
         });
 
     HomeWidgetModel favoritos = HomeWidgetModel(
+        maxFontSize: 18,
+        minFontSize: 14,
         name: 'Favoritos',
         iconPressed: () {},
         assetName: 'assets/icons/school.svg',
@@ -46,6 +52,8 @@ abstract class _HomeControllerBase with Store {
         });
 
     HomeWidgetModel historico = HomeWidgetModel(
+        maxFontSize: 18,
+        minFontSize: 14,
         name: 'Histórico',
         iconPressed: () {},
         assetName: 'assets/icons/school.svg',
@@ -54,6 +62,8 @@ abstract class _HomeControllerBase with Store {
         });
 
     HomeWidgetModel minhasCategorias = HomeWidgetModel(
+        maxFontSize: 18,
+        minFontSize: 14,
         name: 'Minhas Categorias',
         iconPressed: () {},
         assetName: 'assets/icons/school.svg',
@@ -62,6 +72,8 @@ abstract class _HomeControllerBase with Store {
         });
 
     HomeWidgetModel removerPropagandas = HomeWidgetModel(
+        maxFontSize: 18,
+        minFontSize: 12,
         name: 'Remover Propragandas',
         iconPressed: () {},
         assetName: 'assets/icons/school.svg',

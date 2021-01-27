@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:interLibras/app/shared/widgets/category_card_widget.dart';
 import 'package:interLibras/app/shared/widgets/item_card_widget.dart';
 import 'categorias_controller.dart';
 
@@ -20,63 +21,68 @@ class _CategoriasPageState
     controller.initializeCategories();
   }
 
-  @override
+  /*@override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
         shrinkWrap: true,
         children: [
-          Center(
-              child: ItemWidget(
-            backFlag: 'assets/images/Linguagem_asl.png',
-            frontFlag: 'assets/images/linguagem.png',
-            name: 'Laranja',
-            englishName: 'Orange',
-            favorite: false,
-            pressedFavorite: () {},
-            image: 'assets/images/block.png',
-          )),
-          Center(
-              child: ItemWidget(
-            backFlag: 'assets/images/Linguagem_asl.png',
-            frontFlag: 'assets/images/linguagem.png',
-            name: 'Maçã',
-            englishName: 'Apple',
-            favorite: true,
-            pressedFavorite: () {},
-            image: 'assets/images/block.png',
-          )),
-          Center(
-              child: ItemWidget(
-            backFlag: 'assets/images/Linguagem_asl.png',
-            frontFlag: 'assets/images/linguagem.png',
-            name: 'Laranja',
-            englishName: 'Orange',
-            favorite: false,
-            pressedFavorite: () {},
-            image: 'assets/images/block.png',
-          )),
-          Center(
-              child: ItemWidget(
-            backFlag: 'assets/images/Linguagem_asl.png',
-            frontFlag: 'assets/images/linguagem.png',
-            name: 'Maçã',
-            englishName: 'Apple',
-            favorite: true,
-            pressedFavorite: () {},
-            image: 'assets/images/block.png',
-          ))
+          Padding(
+            padding: EdgeInsets.all(5),
+            child: Center(
+                child: ItemWidget(
+              backFlag: 'assets/images/Linguagem_asl.png',
+              frontFlag: 'assets/images/linguagem.png',
+              name: 'Laranja',
+              englishName: 'Orange',
+              favorite: false,
+              pressedFavorite: () {},
+              image: 'assets/images/block.png',
+            )),
+          ),
+          Padding(
+              padding: EdgeInsets.all(5),
+              child: Center(
+                  child: ItemWidget(
+                backFlag: 'assets/images/Linguagem_asl.png',
+                frontFlag: 'assets/images/linguagem.png',
+                name: 'Maçã',
+                englishName: 'Apple',
+                favorite: true,
+                pressedFavorite: () {},
+                image: 'assets/images/block.png',
+              ))),
+          Padding(
+              padding: EdgeInsets.all(5),
+              child: Center(
+                  child: ItemWidget(
+                backFlag: 'assets/images/Linguagem_asl.png',
+                frontFlag: 'assets/images/linguagem.png',
+                name: 'Laranja',
+                englishName: 'Orange',
+                favorite: false,
+                pressedFavorite: () {},
+                image: 'assets/images/block.png',
+              ))),
+          Padding(
+              padding: EdgeInsets.all(5),
+              child: Center(
+                  child: ItemWidget(
+                backFlag: 'assets/images/Linguagem_asl.png',
+                frontFlag: 'assets/images/linguagem.png',
+                name: 'Maçã',
+                englishName: 'Apple',
+                favorite: true,
+                pressedFavorite: () {},
+                image: 'assets/images/block.png',
+              )))
         ],
       ),
     );
   }
-}
-/* 
+}*/
 
-          
-
-
- @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
@@ -90,4 +96,5 @@ class _CategoriasPageState
         },
       ),
     );
-  }*/
+  }
+}

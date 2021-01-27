@@ -27,7 +27,9 @@ class _CategoryCardState extends State<CategoryCard> {
         height: SizeConfig.screenHeight / 4,
         child: Stack(
           children: [
-            Positioned(right: 8, top: 8, child: DeleteButtonWidget()),
+            widget.category.newCategory
+                ? Container()
+                : Positioned(right: 8, top: 8, child: DeleteButtonWidget()),
             Align(
               alignment: widget.category.urlsImages.isNotEmpty &&
                       !widget.category.newCategory
