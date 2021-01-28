@@ -8,8 +8,10 @@ class NamePlayWiget extends StatelessWidget {
   const NamePlayWiget(
       {Key key,
       @required this.name,
+      this.color,
       this.width,
       @required this.iconPressed,
+      this.iconColor,
       @required this.fontSize,
       @required this.maxFontSize,
       @required this.minFontSize})
@@ -20,6 +22,8 @@ class NamePlayWiget extends StatelessWidget {
   final double maxFontSize;
   final double width;
   final double fontSize;
+  final Color color;
+  final Color iconColor;
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -36,14 +40,17 @@ class NamePlayWiget extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                        color: ThemeApp.textColor, fontSize: fontSize),
+                        color: color ?? ThemeApp.textColor, fontSize: fontSize),
                   ))),
           const SizedBox(
             width: 10,
           ),
           GestureDetector(
             onTap: iconPressed,
-            child: Icon(Icons.play_circle_outline_outlined),
+            child: Icon(
+              Icons.play_circle_outline_outlined,
+              color: iconColor ?? Colors.black,
+            ),
           )
         ],
       ),

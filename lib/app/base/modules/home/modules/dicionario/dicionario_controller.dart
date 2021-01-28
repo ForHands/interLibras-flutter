@@ -8,11 +8,11 @@ class DicionarioController = _DicionarioControllerBase
     with _$DicionarioController;
 
 abstract class _DicionarioControllerBase with Store {
-  @observable
-  int value = 0;
+  ObservableList<String> listDic = ObservableList<String>();
 
-  @action
-  void increment() {
-    value++;
+  void initList() {
+    for (var i = 65; i <= 90; i++) {
+      listDic.add('Letra ${String.fromCharCode(i)}');
+    }
   }
 }
