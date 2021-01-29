@@ -84,6 +84,7 @@ class _AppBarState extends State<AppBarWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final appController = Modular.get<AppController>();
     SizeConfig().init(context);
     return Container(
       height: widget.preferredSize.height,
@@ -167,11 +168,11 @@ class _AppBarState extends State<AppBarWidget> {
                                         ),
                                         Container(
                                           width: 40,
-                                          child: Image.asset(controller
-                                                      .currentLanguage.flag ==
-                                                  'br'
-                                              ? 'assets/images/linguagem.png'
-                                              : 'assets/images/Linguagem_asl.png'),
+                                          child: Image.asset(
+                                              controller.currentLanguage.flag ==
+                                                      'br'
+                                                  ? appController.frontFlag
+                                                  : appController.backFlag),
                                         )
                                         /*Container(
                                     decoration: BoxDecoration(

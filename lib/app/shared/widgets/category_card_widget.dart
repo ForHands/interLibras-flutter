@@ -7,8 +7,11 @@ import 'delete_button_widget.dart';
 import 'name_play_widget.dart';
 
 class CategoryCard extends StatefulWidget {
-  CategoryCard({Key key, @required this.category}) : super(key: key);
+  CategoryCard(
+      {Key key, @required this.category, @required this.selectCategorie})
+      : super(key: key);
   final CategoryModel category;
+  final Function selectCategorie;
   @override
   _CategoryCardState createState() => _CategoryCardState();
 }
@@ -30,20 +33,24 @@ class _CategoryCardState extends State<CategoryCard> {
             widget.category.newCategory
                 ? Container()
                 : Positioned(right: 8, top: 8, child: DeleteButtonWidget()),
-            Align(
-              alignment: widget.category.urlsImages.isNotEmpty &&
-                      !widget.category.newCategory
-                  ? Alignment.topLeft
-                  : Alignment.center,
-              child: widget.category.newCategory
-                  ? AddButtonWidget()
-                  : widget.category.urlsImages.isEmpty
-                      ? Image.asset('assets/images/block.png')
-                      : Padding(
-                          padding: EdgeInsets.only(
-                              top: SizeConfig.blockSizeVertical * 2),
-                          child: ListImagesCard(category: widget.category),
-                        ),
+            GestureDetector(
+              onTap:
+                  widget.category.newCategory ? () {} : widget.selectCategorie,
+              child: Align(
+                alignment: widget.category.urlsImages.isNotEmpty &&
+                        !widget.category.newCategory
+                    ? Alignment.topLeft
+                    : Alignment.center,
+                child: widget.category.newCategory
+                    ? AddButtonWidget()
+                    : widget.category.urlsImages.isEmpty
+                        ? Image.asset('assets/images/block.png')
+                        : Padding(
+                            padding: EdgeInsets.only(
+                                top: SizeConfig.blockSizeVertical * 2),
+                            child: ListImagesCard(category: widget.category),
+                          ),
+              ),
             ),
             SizedBox(
               height: 10,

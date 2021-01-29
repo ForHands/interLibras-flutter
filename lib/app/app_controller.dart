@@ -11,6 +11,9 @@ abstract class _AppControllerBase with Store {
   @observable
   LanguageModel currentLanguage = LanguageModel(language: "LIBRAS", flag: 'br');
 
+  final String frontFlag = 'assets/images/linguagem.png';
+  final String backFlag = 'assets/images/Linguagem_asl.png';
+
   @action
   changeCurrentLanguage(LanguageModel language) => currentLanguage = language;
 }
