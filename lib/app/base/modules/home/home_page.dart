@@ -8,7 +8,9 @@ import 'package:interLibras/app/base/modules/home/modules/historico/historico_pa
 import 'package:interLibras/app/base/modules/home/modules/minhas_categorias/minhas_categorias_page.dart';
 import 'package:interLibras/app/shared/utils/size_config.dart';
 import 'package:interLibras/app/shared/widgets/app_bar_widget.dart';
+import 'package:interLibras/app/shared/widgets/error_widget.dart';
 import 'package:interLibras/app/shared/widgets/home_card_widget.dart';
+import 'package:interLibras/app/shared/widgets/warning_dialog.dart';
 import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {

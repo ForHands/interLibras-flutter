@@ -69,8 +69,7 @@ flutter:
   assets:
     - assets/images/
   #  - assets/model_3d
-    - assets/icons/school.svg
-    - assets/icons/interpreter.svg
+    - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
