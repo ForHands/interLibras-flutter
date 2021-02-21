@@ -5,6 +5,7 @@ import 'interpreter_controller.dart';
 
 import 'package:interLibras/app/shared/widgets/avatar_3d.dart';
 import 'package:interLibras/app/shared/utils/size_config.dart';
+import 'modules/search_button.dart';
 
 class InterpreterPage extends StatefulWidget {
   final String title;
@@ -35,10 +36,7 @@ class _InterpreterPageState
               width: SizeConfig.screenWidth,
               height: SizeConfig.screenHeight - 160,
             ),
-            FloatingActionButton(
-              onPressed: () {},
-              backgroundColor: Colors.red,
-            ),
+            Search(),
           ],
         ),
       ),
