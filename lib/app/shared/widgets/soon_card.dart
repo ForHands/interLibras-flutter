@@ -33,8 +33,8 @@ class ComingSoonHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 275,
       height: 196,
+      width: double.infinity,
       child: Icon(
         Icons.school,
         color: Colors.white,
