@@ -3,7 +3,6 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:interLibras/app/base/modules/home/modules/categorias/modules/item_view/item_view_page.dart';
 import 'package:interLibras/app/shared/widgets/category_card_widget.dart';
-import 'package:interLibras/app/shared/widgets/item_card_widget.dart';
 import 'categorias_controller.dart';
 
 class CategoriasPage extends StatefulWidget {
