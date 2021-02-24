@@ -81,10 +81,10 @@ class _BodyHomeState extends State<BodyHome> {
               minFontSize: controller.cards[index].minFontSize,
               name: controller.cards[index].name,
               assetName: controller.cards[index].assetName,
-              //action: controller.cards[index].action,
-              action: () {
+              action: controller.cards[index].action,
+              /*action: () {
                 showReportErrorDialog(context, 'Fruta');
-              },
+              },*/
               iconPressed: controller.cards[index].iconPressed,
             ),
           );

@@ -26,7 +26,7 @@ abstract class _HomeControllerBase with Store {
         minFontSize: 14,
         name: 'Categorias',
         iconPressed: () {},
-        assetName: 'assets/icons/school.svg',
+        assetName: 'assets/icons/categoria.png',
         action: () {
           setHomePage(1);
         });
@@ -36,7 +36,7 @@ abstract class _HomeControllerBase with Store {
         minFontSize: 14,
         name: 'Dicionário',
         iconPressed: () {},
-        assetName: 'assets/icons/school.svg',
+        assetName: 'assets/icons/dicionario.png',
         action: () {
           setHomePage(2);
         });
@@ -46,7 +46,7 @@ abstract class _HomeControllerBase with Store {
         minFontSize: 14,
         name: 'Favoritos',
         iconPressed: () {},
-        assetName: 'assets/icons/school.svg',
+        assetName: 'assets/icons/favortos.png',
         action: () {
           setHomePage(3);
         });
@@ -56,7 +56,7 @@ abstract class _HomeControllerBase with Store {
         minFontSize: 14,
         name: 'Histórico',
         iconPressed: () {},
-        assetName: 'assets/icons/school.svg',
+        assetName: 'assets/icons/minhas_categorias.png',
         action: () {
           setHomePage(4);
         });
@@ -66,7 +66,7 @@ abstract class _HomeControllerBase with Store {
         minFontSize: 14,
         name: 'Minhas Categorias',
         iconPressed: () {},
-        assetName: 'assets/icons/school.svg',
+        assetName: 'assets/icons/historico.png',
         action: () {
           setHomePage(5);
         });
@@ -76,7 +76,7 @@ abstract class _HomeControllerBase with Store {
         minFontSize: 12,
         name: 'Remover Propragandas',
         iconPressed: () {},
-        assetName: 'assets/icons/school.svg',
+        assetName: 'assets/icons/removeranucio.png',
         action: () {});
     cards.add(categorias);
     cards.add(dicionario);

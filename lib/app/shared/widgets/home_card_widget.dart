@@ -1,10 +1,6 @@
 import 'dart:ui';
-
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:interLibras/app/shared/utils/size_config.dart';
-import 'package:interLibras/app/shared/utils/theme.dart';
 
 import 'name_play_widget.dart';
 
@@ -45,13 +41,13 @@ class HomeCardWidget extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.only(top: 15),
-                  child: SvgPicture.asset(
+                  child: Image.asset(
                     assetName,
                     height: SizeConfig.screenWidth / 4,
                   ),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 8,
                 ),
                 Expanded(
                     child: Align(
