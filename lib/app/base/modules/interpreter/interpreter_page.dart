@@ -3,6 +3,10 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:interLibras/app/shared/widgets/app_bar_widget.dart';
 import 'interpreter_controller.dart';
 
+import 'package:interLibras/app/shared/widgets/avatar_3d.dart';
+import 'package:interLibras/app/shared/utils/size_config.dart';
+import 'modules/search_button.dart';
+
 class InterpreterPage extends StatefulWidget {
   final String title;
   const InterpreterPage({Key key, this.title = "Interpreter"})
@@ -19,11 +23,23 @@ class _InterpreterPageState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBarWidget(
-          iconPressed: () {},
-          screeName: widget.title,
-          language: 'Brasil',
+      appBar: AppBarWidget(
+        iconPressed: () {},
+        screeName: widget.title,
+        language: 'Brasil',
+      ),
+      body: SingleChildScrollView(
+        child: Stack(
+          alignment: Alignment.bottomRight,
+          children: <Widget>[
+            Avatar3d(
+              width: SizeConfig.screenWidth,
+              height: SizeConfig.screenHeight - 160,
+            ),
+            Search(),
+          ],
         ),
-        body: Container());
+      ),
+    );
   }
 }
