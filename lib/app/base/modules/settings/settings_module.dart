@@ -1,11 +1,12 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:inter_libras/app/base/modules/settings/settings_controller.dart';
 
 import 'settings_page.dart';
 
 class SettingsModule extends ChildModule {
   @override
   List<Bind> get binds => [
-        //$SettingsController,
+        Bind((i) => SettingsController()),
       ];
 
   @override

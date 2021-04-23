@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:inter_libras/app/shared/widgets/dialogs/report_error_dialog.dart';
 import '../../../shared/utils/size_config.dart';
 import '../../../shared/widgets/app_bar_widget.dart';
 import '../../../shared/widgets/home_card_widget.dart';
@@ -80,10 +81,10 @@ class _BodyHomeState extends State<BodyHome> {
               minFontSize: controller.cards[index].minFontSize,
               name: controller.cards[index].name,
               assetName: controller.cards[index].assetName,
-              action: controller.cards[index].action,
-              /*action: () {
+              //action: controller.cards[index].action,
+              action: () {
                 showReportErrorDialog(context, 'Fruta');
-              },*/
+              },
               iconPressed: controller.cards[index].iconPressed,
             ),
           );

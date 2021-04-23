@@ -8,7 +8,7 @@ import 'splash/splash.dart';
 class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
-        //$AppController,
+        Bind((i) => AppController()),
       ];
 
   @override

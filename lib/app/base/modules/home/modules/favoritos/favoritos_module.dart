@@ -1,12 +1,13 @@
 
 import 'package:flutter_modular/flutter_modular.dart';
 
+import 'favoritos_controller.dart';
 import 'favoritos_page.dart';
 
 class FavoritosModule extends ChildModule {
   @override
   List<Bind> get binds => [
-        //$FavoritosController,
+        Bind((i) => FavoritosController()),
       ];
 
   @override

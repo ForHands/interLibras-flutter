@@ -124,15 +124,16 @@ void showReportErrorDialog(BuildContext context, String word) {
             ],
           ),
           content: SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.only(left: 10),
-              child: Container(
+            child: Container(
                 height: 350,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
+                        const SizedBox(
+                          width: 5,
+                        ),
                         Text(
                           'Palavra: ',
                           style: GoogleFonts.poppins(
@@ -156,6 +157,11 @@ void showReportErrorDialog(BuildContext context, String word) {
                         )
                       ],
                     ),
+                    Row(
+                      children: [
+                        const SizedBox(
+                          width: 5,
+                        ),
                     Text(
                       'Erro: ',
                       style: GoogleFonts.poppins(
@@ -165,12 +171,12 @@ void showReportErrorDialog(BuildContext context, String word) {
                         ),
                       ),
                     ),
+                    ]),
                     ErrorWidget(),
                   ],
                 ),
               ),
             ),
-          ),
           actions: [
             // ignore: deprecated_member_use
             RaisedButton(

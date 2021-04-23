@@ -1,12 +1,13 @@
 
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:inter_libras/app/base/modules/profile/profile_controller.dart';
 
 import 'profile_page.dart';
 
 class ProfileModule extends ChildModule {
   @override
   List<Bind> get binds => [
-        //$ProfileController,
+        Bind((i) => ProfileController()),
       ];
 
   @override

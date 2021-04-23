@@ -1,12 +1,13 @@
 
 import 'package:flutter_modular/flutter_modular.dart';
 
+import 'historico_controller.dart';
 import 'historico_page.dart';
 
 class HistoricoModule extends ChildModule {
   @override
   List<Bind> get binds => [
-        //$HistoricoController,
+        Bind((i) => HistoricoController()),
       ];
 
   @override
