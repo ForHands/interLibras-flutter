@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:interLibras/app/base/modules/home/modules/categorias/categorias_page.dart';
-import 'package:interLibras/app/base/modules/home/modules/dicionario/dicionario_page.dart';
-import 'package:interLibras/app/base/modules/home/modules/favoritos/favoritos_page.dart';
-import 'package:interLibras/app/base/modules/home/modules/historico/historico_page.dart';
-import 'package:interLibras/app/base/modules/home/modules/minhas_categorias/minhas_categorias_page.dart';
-import 'package:interLibras/app/shared/utils/size_config.dart';
-import 'package:interLibras/app/shared/widgets/app_bar_widget.dart';
-import 'package:interLibras/app/shared/widgets/dialogs/report_error_dialog.dart';
-import 'package:interLibras/app/shared/widgets/home_card_widget.dart';
+import '../../../shared/utils/size_config.dart';
+import '../../../shared/widgets/app_bar_widget.dart';
+import '../../../shared/widgets/home_card_widget.dart';
 import 'home_controller.dart';
+import 'modules/categorias/categorias_page.dart';
+import 'modules/dicionario/dicionario_page.dart';
+import 'modules/favoritos/favoritos_page.dart';
+import 'modules/historico/historico_page.dart';
+import 'modules/minhas_categorias/minhas_categorias_page.dart';
 
 class HomePage extends StatefulWidget {
   final String title;

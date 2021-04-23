@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'package:interLibras/app/base/modules/profile/modules/login/login_page.dart';
-import 'package:interLibras/app/base/modules/profile/modules/shared/bottom_action.dart';
-import 'package:interLibras/app/base/modules/profile/modules/shared/profile_appbar.dart';
-import 'package:interLibras/app/base/modules/profile/modules/shared/standard_button.dart';
-import 'package:interLibras/app/base/modules/profile/modules/shared/standard_text.dart';
-import 'package:interLibras/app/base/modules/profile/modules/shared/standard_textField.dart';
-import 'package:interLibras/app/base/modules/profile/modules/verifications/validation_code.dart';
+import '../login/login_page.dart';
+import '../shared/bottom_action.dart';
+import '../shared/profile_appbar.dart';
+import '../shared/standard_button.dart';
+import '../shared/standard_text.dart';
+import '../shared/standard_textField.dart';
+import '../verifications/validation_code.dart';
+
 
 const String screenText = 'Preencha suas informações para efetuar seu cadastro';
 

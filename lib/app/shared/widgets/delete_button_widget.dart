@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:interLibras/app/shared/utils/theme.dart';
+
+// ignore_for_file: deprecated_member_use
+import '../utils/theme.dart';
 
 class DeleteButtonWidget extends StatelessWidget {
   const DeleteButtonWidget({Key key}) : super(key: key);

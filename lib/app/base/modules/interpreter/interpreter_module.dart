@@ -1,4 +1,4 @@
-import 'interpreter_controller.dart';
+
 import 'package:flutter_modular/flutter_modular.dart';
 
 import 'interpreter_page.dart';
@@ -6,7 +6,7 @@ import 'interpreter_page.dart';
 class InterpreterModule extends ChildModule {
   @override
   List<Bind> get binds => [
-        $InterpreterController,
+        //$InterpreterController,
       ];
 
   @override

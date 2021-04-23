@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:interLibras/app/shared/utils/size_config.dart';
+import '../utils/size_config.dart';
 import 'item_individual_card_widget.dart';
 
 class ItemWidget extends StatefulWidget {

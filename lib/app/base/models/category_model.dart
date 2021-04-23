@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:interLibras/app/shared/widgets/item_card_widget.dart';
+import '../../shared/widgets/item_card_widget.dart';
 
 class CategoryModel {
   CategoryModel(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:interLibras/app/base/modules/home/modules/categorias/modules/item_view/item_view_page.dart';
-import 'package:interLibras/app/shared/widgets/category_card_widget.dart';
+import '../../../../../shared/widgets/category_card_widget.dart';
 import 'categorias_controller.dart';
+import 'modules/item_view/item_view_page.dart';
 
 class CategoriasPage extends StatefulWidget {
   final String title;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:interLibras/app/shared/utils/theme.dart';
+
+import '../../../../../shared/utils/theme.dart';
 
 class ProfileBottomAction extends StatelessWidget {
   final String simpleText;

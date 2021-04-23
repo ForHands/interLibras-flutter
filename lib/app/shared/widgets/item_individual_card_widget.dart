@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:interLibras/app/shared/utils/size_config.dart';
-import 'package:interLibras/app/shared/utils/theme.dart';
-
+import '../utils/size_config.dart';
+import '../utils/theme.dart';
 import 'name_play_widget.dart';
 
 class ItemIndividualWidget extends StatefulWidget {

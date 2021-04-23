@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:interLibras/app/shared/utils/theme.dart';
 
+import '../../../../shared/utils/theme.dart';
 import 'search_field.dart';
 import 'search_voice.dart';
 

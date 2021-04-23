@@ -3,16 +3,6 @@
 part of 'minhas_categorias_controller.dart';
 
 // **************************************************************************
-// InjectionGenerator
-// **************************************************************************
-
-final $MinhasCategoriasController = BindInject(
-  (i) => MinhasCategoriasController(),
-  singleton: true,
-  lazy: true,
-);
-
-// **************************************************************************
 // StoreGenerator
 // **************************************************************************
 

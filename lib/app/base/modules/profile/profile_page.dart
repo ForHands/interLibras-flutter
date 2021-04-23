@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:interLibras/app/shared/widgets/app_bar_widget.dart';
-import 'package:interLibras/app/shared/widgets/drawer_widget.dart';
-import 'package:interLibras/app/base/modules/profile/modules/my_profile/info_profile.dart';
-import 'package:interLibras/app/base/modules/profile/modules/profile_card.dart';
-
+import '../../../shared/widgets/app_bar_widget.dart';
+import '../../../shared/widgets/drawer_widget.dart';
+import 'modules/my_profile/info_profile.dart';
+import 'modules/profile_card.dart';
 import 'profile_controller.dart';
 
 class ProfilePage extends StatefulWidget {

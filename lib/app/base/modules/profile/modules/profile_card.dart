@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'package:interLibras/app/shared/utils/theme.dart';
-import 'package:interLibras/app/base/modules/profile/modules/shared/standard_button.dart';
-import 'package:interLibras/app/base/modules/profile/modules/login/login_page.dart';
-import 'package:interLibras/app/base/modules/profile/modules/signup/signup_page.dart';
+import '../../../../shared/utils/theme.dart';
+import 'login/login_page.dart';
+import 'shared/standard_button.dart';
+import 'signup/signup_page.dart';
 
 const String _title = 'Bem-vindo';
 const String _text =

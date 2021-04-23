@@ -95,21 +95,6 @@ class _StandardTextFieldState extends State<StandardTextField> {
     );
   }
 
-  void _inputMask(TextEditingController controller, String type) {
-    String text = controller.value.text;
-    bool error = false;
-
-    if (type.compareTo('Email') == 0) {
-      error = RegExp(
-              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-          .hasMatch(text);
-    }
-
-    setState(() {
-      _appearError = error;
-    });
-  }
-
   Widget _error() {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0),

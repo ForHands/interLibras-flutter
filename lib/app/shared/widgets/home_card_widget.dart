@@ -1,7 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:interLibras/app/shared/utils/size_config.dart';
-
+import '../utils/size_config.dart';
 import 'name_play_widget.dart';
 
 class HomeCardWidget extends StatelessWidget {

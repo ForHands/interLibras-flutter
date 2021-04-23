@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:interLibras/app/shared/utils/theme.dart';
+import '../utils/theme.dart';
 
 class ConfigComponentWidget extends StatelessWidget {
   const ConfigComponentWidget(

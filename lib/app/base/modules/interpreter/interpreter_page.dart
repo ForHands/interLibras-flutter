@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:interLibras/app/shared/widgets/app_bar_widget.dart';
+import '../../../shared/utils/size_config.dart';
+import '../../../shared/widgets/app_bar_widget.dart';
+import '../../../shared/widgets/avatar_3d.dart';
 import 'interpreter_controller.dart';
-
-import 'package:interLibras/app/shared/widgets/avatar_3d.dart';
-import 'package:interLibras/app/shared/utils/size_config.dart';
 import 'modules/search_button.dart';
 
 class InterpreterPage extends StatefulWidget {

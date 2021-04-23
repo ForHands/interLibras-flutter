@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:interLibras/app/shared/widgets/app_bar_widget.dart';
-import 'package:interLibras/app/shared/widgets/soon_card.dart';
+import '../../../shared/widgets/app_bar_widget.dart';
+import '../../../shared/widgets/soon_card.dart';
 import 'academy_controller.dart';
 
 class AcademyPage extends StatefulWidget {

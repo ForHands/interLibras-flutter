@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:interLibras/app/shared/utils/theme.dart';
-import 'package:interLibras/app/base/modules/profile/modules/shared/profile_appbar.dart';
-import 'package:interLibras/app/base/modules/profile/modules/shared/bottom_action.dart';
-import 'package:interLibras/app/base/modules/profile/modules/shared/standard_text.dart';
-import 'package:interLibras/app/base/modules/profile/modules/shared/standard_textField.dart';
-import 'package:interLibras/app/base/modules/profile/modules/shared/standard_button.dart';
-import 'package:interLibras/app/base/modules/profile/modules/signup/signup_page.dart';
-import 'package:interLibras/app/base/modules/profile/modules/verifications/password_recovery.dart';
+import '../../../../../shared/utils/theme.dart';
+import '../shared/bottom_action.dart';
+import '../shared/profile_appbar.dart';
+import '../shared/standard_button.dart';
+import '../shared/standard_text.dart';
+import '../shared/standard_textField.dart';
+import '../signup/signup_page.dart';
+import '../verifications/password_recovery.dart';
+
 
 const screenText = 'Insira seus dados para entrar na conta';
 

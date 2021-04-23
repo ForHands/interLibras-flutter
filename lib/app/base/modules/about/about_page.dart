@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:interLibras/app/shared/utils/size_config.dart';
-import 'package:interLibras/app/shared/utils/theme.dart';
+import '../../../shared/utils/size_config.dart';
+import '../../../shared/utils/theme.dart';
 import 'about_controller.dart';
 
 class AboutPage extends StatefulWidget {

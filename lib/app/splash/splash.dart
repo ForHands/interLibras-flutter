@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:interLibras/app/shared/utils/size_config.dart';
+import '../shared/utils/size_config.dart';
 
 class SplashPage extends StatefulWidget {
   @override

@@ -1,4 +1,4 @@
-import 'categorias_controller.dart';
+
 import 'package:flutter_modular/flutter_modular.dart';
 
 import 'categorias_page.dart';
@@ -6,7 +6,7 @@ import 'categorias_page.dart';
 class CategoriasModule extends ChildModule {
   @override
   List<Bind> get binds => [
-        $CategoriasController,
+        //$CategoriasController,
       ];
 
   @override

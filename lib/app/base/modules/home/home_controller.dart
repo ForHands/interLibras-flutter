@@ -1,6 +1,7 @@
-import 'package:interLibras/app/shared/models/home_widget_model.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+
+import '../../models/home_widget_model.dart';
 
 part 'home_controller.g.dart';
 

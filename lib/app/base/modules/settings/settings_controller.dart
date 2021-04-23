@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:interLibras/app/shared/models/config_tile_model.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+
+import '../../models/config_tile_model.dart';
 
 part 'settings_controller.g.dart';
 

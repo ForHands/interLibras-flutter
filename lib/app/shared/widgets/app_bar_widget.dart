@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:interLibras/app/app_controller.dart';
-import 'package:interLibras/app/shared/models/language_model.dart';
-import 'package:interLibras/app/shared/utils/size_config.dart';
-import 'package:interLibras/app/shared/utils/theme.dart';
+import '../../app_controller.dart';
+import '../../base/models/language_model.dart';
+import '../utils/size_config.dart';
+import '../utils/theme.dart';
 
 class AppBarWidget extends StatefulWidget implements PreferredSizeWidget {
   final String screeName;

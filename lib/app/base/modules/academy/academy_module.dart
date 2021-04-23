@@ -1,4 +1,4 @@
-import 'academy_controller.dart';
+
 import 'package:flutter_modular/flutter_modular.dart';
 
 import 'academy_page.dart';
@@ -6,7 +6,7 @@ import 'academy_page.dart';
 class AcademyModule extends ChildModule {
   @override
   List<Bind> get binds => [
-        $AcademyController,
+        //$AcademyController,
       ];
 
   @override

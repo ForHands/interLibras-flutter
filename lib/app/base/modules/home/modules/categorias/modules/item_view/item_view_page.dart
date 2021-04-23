@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:interLibras/app/shared/widgets/item_card_widget.dart';
+import 'package:inter_libras/app/shared/widgets/item_card_widget.dart';
 
 class ItemViewPage extends StatefulWidget {
   final String title;

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:interLibras/app/shared/utils/theme.dart';
-import 'package:avatar_glow/avatar_glow.dart';
-import 'package:speech_to_text/speech_to_text.dart' as stt;
+
+import '../../../../shared/utils/theme.dart';
 
 class SearchVoice extends StatefulWidget {
   @override
@@ -10,14 +8,14 @@ class SearchVoice extends StatefulWidget {
 }
 
 class _SearchVoiceState extends State<SearchVoice> {
-  stt.SpeechToText _speech;
-  bool _isListening = true;
-  String _text = 'Diga algo para pesquisar';
+  //stt.SpeechToText _speech;
+  //bool _isListening = true;
+  //String _text = 'Diga algo para pesquisar';
 
   @override
   void initState() {
     super.initState();
-    _speech = stt.SpeechToText();
+    //_speech = stt.SpeechToText();
   }
 
   @override

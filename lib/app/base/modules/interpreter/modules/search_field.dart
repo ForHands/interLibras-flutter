@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:interLibras/app/shared/utils/theme.dart';
-import 'package:interLibras/app/shared/utils/size_config.dart';
+
+import '../../../../shared/utils/size_config.dart';
+import '../../../../shared/utils/theme.dart';
 
 class SearchField extends StatefulWidget {
   @override

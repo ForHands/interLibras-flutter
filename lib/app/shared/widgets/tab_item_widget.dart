@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:interLibras/app/base/base_controller.dart';
+
+import '../../base/base_controller.dart';
 
 class TabItem {
   final String svg;

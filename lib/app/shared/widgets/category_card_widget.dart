@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:interLibras/app/shared/models/category_model.dart';
-import 'package:interLibras/app/shared/utils/size_config.dart';
-import 'package:interLibras/app/shared/widgets/list_images_card.dart';
+import '../../base/models/category_model.dart';
+import '../utils/size_config.dart';
 import 'add_button_widget.dart';
 import 'delete_button_widget.dart';
+import 'list_images_card.dart';
 import 'name_play_widget.dart';
 
 class CategoryCard extends StatefulWidget {

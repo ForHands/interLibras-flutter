@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:interLibras/app/shared/utils/theme.dart';
+import '../utils/theme.dart';
 
 class ExpandCard extends StatefulWidget {
   final Widget header;

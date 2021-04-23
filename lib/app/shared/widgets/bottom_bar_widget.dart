@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:interLibras/app/base/base_controller.dart';
-import 'package:interLibras/app/shared/utils/theme.dart';
+import '../../base/base_controller.dart';
+import '../utils/theme.dart';
 
 class BottomBarWidget extends StatelessWidget {
   BottomBarWidget({

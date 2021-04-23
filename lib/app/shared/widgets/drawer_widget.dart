@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:interLibras/app/shared/utils/size_config.dart';
-import 'package:interLibras/app/shared/utils/theme.dart';
-
+import '../utils/size_config.dart';
+import '../utils/theme.dart';
 import 'drawer_tile.dart';
 
 class MenuDrawer extends StatelessWidget {

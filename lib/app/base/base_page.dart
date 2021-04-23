@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:interLibras/app/shared/widgets/bottom_bar_widget.dart';
+import '../shared/widgets/bottom_bar_widget.dart';
 import 'base_controller.dart';
 
 class BasePage extends StatefulWidget {

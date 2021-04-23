@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:interLibras/app/shared/widgets/expand_widget.dart';
-import 'package:interLibras/app/shared/widgets/name_play_widget.dart';
+import '../../../../../shared/widgets/expand_widget.dart';
+import '../../../../../shared/widgets/name_play_widget.dart';
 import 'dicionario_controller.dart';
 
 class DicionarioPage extends StatefulWidget {

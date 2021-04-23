@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:interLibras/app/base/modules/profile/modules/shared/profile_appbar.dart';
-import 'package:interLibras/app/base/modules/profile/modules/shared/standard_button.dart';
-import 'package:interLibras/app/base/modules/profile/modules/shared/standard_textField.dart';
-import 'package:interLibras/app/shared/utils/theme.dart';
+
+import '../../../../../shared/utils/theme.dart';
+import '../shared/profile_appbar.dart';
+import '../shared/standard_button.dart';
+import '../shared/standard_textField.dart';
 
 class NewPasswordPage extends StatelessWidget {
   @override

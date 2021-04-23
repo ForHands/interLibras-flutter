@@ -1,9 +1,9 @@
-import 'package:interLibras/app/app_controller.dart';
-import 'package:interLibras/app/shared/models/category_model.dart';
-import 'package:interLibras/app/shared/widgets/item_card_widget.dart';
+
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
+import '../../../../../app_controller.dart';
+import '../../../../../shared/widgets/item_card_widget.dart';
+import '../../../../models/category_model.dart';
 part 'categorias_controller.g.dart';
 
 @Injectable()

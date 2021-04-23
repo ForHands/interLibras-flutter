@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:interLibras/app/shared/models/category_model.dart';
-import 'package:interLibras/app/shared/utils/size_config.dart';
+import '../../base/models/category_model.dart';
+import '../utils/size_config.dart';
 
 class ListImagesCard extends StatelessWidget {
   const ListImagesCard({Key key, @required this.category}) : super(key: key);

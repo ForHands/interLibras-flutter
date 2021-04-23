@@ -1,7 +1,6 @@
-import 'package:interLibras/app/shared/models/language_model.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
+import 'base/models/language_model.dart';
 part 'app_controller.g.dart';
 
 @Injectable()

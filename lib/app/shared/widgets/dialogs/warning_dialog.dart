@@ -1,7 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:interLibras/app/shared/utils/size_config.dart';
+import '../../utils/size_config.dart';
+
+// ignore_for_file: deprecated_member_use
 
 void showWarningDialog(BuildContext context) {
   showDialog(

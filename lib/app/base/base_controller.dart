@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:interLibras/app/shared/widgets/tab_item_widget.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
+import '../shared/widgets/tab_item_widget.dart';
 import 'modules/academy/academy_page.dart';
 import 'modules/home/home_controller.dart';
 import 'modules/home/home_page.dart';

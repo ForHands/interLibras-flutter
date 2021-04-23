@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:interLibras/app/shared/utils/theme.dart';
+import '../utils/theme.dart';
 
+// ignore_for_file: deprecated_member_use
 class AddButtonWidget extends StatelessWidget {
   const AddButtonWidget({Key key}) : super(key: key);
 

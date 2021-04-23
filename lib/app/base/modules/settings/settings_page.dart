@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:interLibras/app/shared/utils/size_config.dart';
-import 'package:interLibras/app/shared/widgets/app_bar_widget.dart';
-import 'package:interLibras/app/shared/widgets/config_component_widget.dart';
+import '../../../shared/utils/size_config.dart';
+import '../../../shared/widgets/app_bar_widget.dart';
+import '../../../shared/widgets/config_component_widget.dart';
 import 'settings_controller.dart';
 
 class SettingsPage extends StatefulWidget {

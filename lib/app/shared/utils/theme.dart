@@ -23,7 +23,6 @@ class ThemeApp {
       backgroundColor: Colors.white,
       hintColor: Color.fromRGBO(137, 157, 170, 0.3),
       disabledColor: Color(0xFFC4C4C4),
-      cursorColor: primaryColor,
       errorColor: Color(0xFFFF5757),
       fontFamily: 'Material Icons',
       iconTheme: IconThemeData(color: Colors.black),
