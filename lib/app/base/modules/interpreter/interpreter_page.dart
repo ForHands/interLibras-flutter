@@ -27,18 +27,19 @@ class _InterpreterPageState
         screeName: widget.title,
         language: 'Brasil',
       ),
-      body: SingleChildScrollView(
-        child: Stack(
-          alignment: Alignment.bottomRight,
+      body: Stack(
           children: <Widget>[
             Avatar3d(
               width: SizeConfig.screenWidth,
               height: SizeConfig.screenHeight - 160,
             ),
-            Search(),
+            Positioned(
+              right: 5,
+              bottom: 5,
+              child: Search(),
+            )
           ],
         ),
-      ),
     );
   }
 }

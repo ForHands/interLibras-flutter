@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:inter_libras/app/shared/widgets/dialogs/report_error_dialog.dart';
 import '../../../shared/utils/size_config.dart';
 import '../../../shared/widgets/app_bar_widget.dart';
 import '../../../shared/widgets/home_card_widget.dart';
@@ -24,14 +23,9 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   //use 'controller' variable to access controller
 
   @override
-  void initState() {
-    super.initState();
-    controller.intializeCards();
-  }
-
-  @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
+    controller.intializeCards(context);
     return Observer(builder: (_) {
       return WillPopScope(
           onWillPop: controller.handleWillPop,
@@ -41,17 +35,25 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                 screeName: widget.title,
                 language: 'Brasil',
               ),
-              body: IndexedStack(
-                index: controller.homeIndexPage,
-                children: [
-                  BodyHome(),
-                  CategoriasPage(),
-                  DicionarioPage(),
-                  FavoritosPage(),
-                  HistoricoPage(),
-                  MinhasCategoriasPage(),
-                ],
-              )));
+              body: GridView.builder(
+        shrinkWrap: true,
+        itemCount: controller.cards.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, childAspectRatio: 1),
+        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+        itemBuilder: (BuildContext ctxt, int index) {
+          return new Padding(
+            padding: EdgeInsets.all(3),
+            child: HomeCardWidget(
+              maxFontSize: controller.cards[index].maxFontSize,
+              minFontSize: controller.cards[index].minFontSize,
+              name: controller.cards[index].name,
+              assetName: controller.cards[index].assetName,
+              action: controller.cards[index].action,
+              iconPressed: controller.cards[index].iconPressed,
+            ),
+          );
+        })));
     });
   }
 }
@@ -81,10 +83,7 @@ class _BodyHomeState extends State<BodyHome> {
               minFontSize: controller.cards[index].minFontSize,
               name: controller.cards[index].name,
               assetName: controller.cards[index].assetName,
-              //action: controller.cards[index].action,
-              action: () {
-                showReportErrorDialog(context, 'Fruta');
-              },
+              action: controller.cards[index].action,
               iconPressed: controller.cards[index].iconPressed,
             ),
           );

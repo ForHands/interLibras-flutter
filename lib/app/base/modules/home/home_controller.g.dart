@@ -47,11 +47,11 @@ mixin _$HomeController on _HomeControllerBase, Store {
   }
 
   @override
-  void intializeCards() {
+  void intializeCards(BuildContext context) {
     final _$actionInfo = _$_HomeControllerBaseActionController.startAction(
         name: '_HomeControllerBase.intializeCards');
     try {
-      return super.intializeCards();
+      return super.intializeCards(context);
     } finally {
       _$_HomeControllerBaseActionController.endAction(_$actionInfo);
     }

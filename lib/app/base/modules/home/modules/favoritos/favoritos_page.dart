@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:inter_libras/app/shared/widgets/app_bar_widget.dart';
 import 'favoritos_controller.dart';
 
 class FavoritosPage extends StatefulWidget {
@@ -17,9 +18,14 @@ class _FavoritosPageState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: AppBarWidget(
+        screeName: 'Favoritos', 
+        language: 'Brasil', 
+        iconPressed: (){},
+        enableBack:true,
+        backPressed:(){
+          Navigator.of(context).pop();
+        }),
       body: Column(
         children: <Widget>[],
       ),

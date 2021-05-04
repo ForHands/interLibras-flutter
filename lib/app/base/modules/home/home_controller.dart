@@ -1,3 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:inter_libras/app/base/modules/home/modules/categorias/categorias_page.dart';
+import 'package:inter_libras/app/base/modules/home/modules/dicionario/dicionario_page.dart';
+import 'package:inter_libras/app/base/modules/home/modules/favoritos/favoritos_page.dart';
+import 'package:inter_libras/app/base/modules/home/modules/historico/historico_page.dart';
+import 'package:inter_libras/app/base/modules/home/modules/minhas_categorias/minhas_categorias_page.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -20,7 +26,7 @@ abstract class _HomeControllerBase with Store {
   }
 
   @action
-  void intializeCards() {
+  void intializeCards(BuildContext context) {
     cards.clear();
     HomeWidgetModel categorias = HomeWidgetModel(
         maxFontSize: 18,
@@ -29,7 +35,12 @@ abstract class _HomeControllerBase with Store {
         iconPressed: () {},
         assetName: 'assets/icons/categoria.png',
         action: () {
-          setHomePage(1);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) {
+              return CategoriasPage();
+            }),
+          );
         });
 
     HomeWidgetModel dicionario = HomeWidgetModel(
@@ -39,7 +50,12 @@ abstract class _HomeControllerBase with Store {
         iconPressed: () {},
         assetName: 'assets/icons/dicionario.png',
         action: () {
-          setHomePage(2);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) {
+              return DicionarioPage();
+            }),
+          );
         });
 
     HomeWidgetModel favoritos = HomeWidgetModel(
@@ -49,27 +65,42 @@ abstract class _HomeControllerBase with Store {
         iconPressed: () {},
         assetName: 'assets/icons/favortos.png',
         action: () {
-          setHomePage(3);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) {
+              return FavoritosPage();
+            }),
+          );
+        });
+
+    HomeWidgetModel minhasCategorias = HomeWidgetModel(
+        maxFontSize: 18,
+        minFontSize: 14,
+        iconPressed: () {},
+        name: 'Minhas Categorias',
+        assetName: 'assets/icons/minhas_categorias.png',
+        action: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) {
+              return MinhasCategoriasPage();
+            }),
+          );
         });
 
     HomeWidgetModel historico = HomeWidgetModel(
         maxFontSize: 18,
         minFontSize: 14,
         name: 'Histórico',
-        iconPressed: () {},
-        assetName: 'assets/icons/minhas_categorias.png',
-        action: () {
-          setHomePage(4);
-        });
-
-    HomeWidgetModel minhasCategorias = HomeWidgetModel(
-        maxFontSize: 18,
-        minFontSize: 14,
-        name: 'Minhas Categorias',
-        iconPressed: () {},
         assetName: 'assets/icons/historico.png',
+        iconPressed: () {},
         action: () {
-          setHomePage(5);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) {
+              return HistoricoPage();
+            }),
+          );
         });
 
     HomeWidgetModel removerPropagandas = HomeWidgetModel(
@@ -79,11 +110,13 @@ abstract class _HomeControllerBase with Store {
         iconPressed: () {},
         assetName: 'assets/icons/removeranucio.png',
         action: () {});
+
+
     cards.add(categorias);
     cards.add(dicionario);
     cards.add(favoritos);
-    cards.add(historico);
     cards.add(minhasCategorias);
+    cards.add(historico);
     cards.add(removerPropagandas);
   }
 

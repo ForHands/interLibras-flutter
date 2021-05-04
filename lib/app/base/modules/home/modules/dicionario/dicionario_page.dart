@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:inter_libras/app/shared/widgets/app_bar_widget.dart';
 import '../../../../../shared/widgets/expand_widget.dart';
 import '../../../../../shared/widgets/name_play_widget.dart';
 import 'dicionario_controller.dart';
@@ -24,6 +25,14 @@ class _DicionarioPageState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBarWidget(
+        screeName: 'Dicionario', 
+        language: 'Brasil', 
+        iconPressed: (){},
+        enableBack:true,
+        backPressed:(){
+          Navigator.of(context).pop();
+        }),
       body: SingleChildScrollView(
         child: Observer(
           builder: (_) {
